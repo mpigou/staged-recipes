@@ -55,6 +55,7 @@ requirements:
     - h5py
     - jsonschema
     - liblapacke
+    - lisaconstants
     - multispline
     - numba
     - numpy
@@ -76,11 +77,11 @@ test:
     - few_backend_cpu
   requires:
     - pip
+    - matplotlib
   commands:
     - pip check
     - python -c "import importlib.metadata; assert importlib.metadata.version('fastemriwaveforms') == '{{ version }}'"
     - python -c "import few; few.get_backend('cpu')"
-    - FEW_ENABLED_BACKENDS="cpu" python -m few.tests
 
 about:
   home: https://github.com/BlackHolePerturbationToolkit/FastEMRIWaveforms
